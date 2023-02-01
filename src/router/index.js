@@ -1,23 +1,34 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import AddNewEntry from "../views/AddNewEntry.vue";
+import WeightOverTime from "../views/WeightOverTime.vue";
+import LoginPage from "../views/LoginPage.vue";
+import RegisterAccount from "../views/RegisterAccount.vue";
+import UserProfile from "../views/UserProfile.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: "/",
+      component: WeightOverTime,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
-})
+      path: "/add-new-entry",
+      component: AddNewEntry,
+    },
+    {
+      path: "/login",
+      component: LoginPage,
+    },
+    {
+      path: "/register",
+      component: RegisterAccount,
+    },
+    {
+      path: "/my-profile",
+      component: UserProfile,
+    },
+  ],
+});
 
-export default router
+export default router;
